@@ -3,6 +3,8 @@
 #include "Library/Serialization/EnumSerialization.h"
 #include "Library/Json/Json.h"
 
+using namespace nlohmann::detail;
+
 template<class T>
 void TestRoundTrip(const T &value) {
     T tmp;

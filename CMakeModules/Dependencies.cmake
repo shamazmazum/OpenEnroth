@@ -86,5 +86,7 @@ macro(resolve_dependencies) # Intentionally a macro - we want set() to work in p
         find_package(PkgConfig REQUIRED)
         pkg_check_modules(LuaJit REQUIRED luajit)
         pkg_check_modules(FMT REQUIRED fmt)
+        pkg_check_modules(GLM REQUIRED glm)
+        pkg_check_modules(NLOHMANN_JSON REQUIRED nlohmann_json)
     endif()
 endmacro()

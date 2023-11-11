@@ -13,8 +13,8 @@ target_check_style(library_json)
 target_link_libraries(library_json
         PUBLIC
         utility
-        library_serialization
-        nlohmann_json)
+        library_serialization)
+target_include_directories(library_json PUBLIC ${NLOHMANN_JSON_INCLUDE_DIRS})
 
 
 if(OE_BUILD_TESTS)

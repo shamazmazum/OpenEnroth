@@ -90,13 +90,12 @@ target_link_libraries(engine_graphics
         library_serialization
         library_color
         library_image
-        glm::glm
         PRIVATE
         ${LuaJit_LDFLAGS}
         glad
         nuklear)
 
-target_include_directories(engine_graphics PRIVATE ${LuaJit_INCLUDE_DIRS})
+target_include_directories(engine_graphics PRIVATE ${LuaJit_INCLUDE_DIRS} ${GLM_INCLUDE_DIRS})
 
 if (NOT BUILD_PLATFORM STREQUAL "android")
     find_package(OpenGL REQUIRED)
