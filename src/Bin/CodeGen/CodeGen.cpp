@@ -182,7 +182,7 @@ int runBeaconsCodeGen(CodeGenOptions options, GameResourceManager *resourceManag
         if (!fileName.ends_with(".odm") && !fileName.ends_with(".blv"))
             continue; // Not a level file.
 
-        fmt::println("    {{MAP_{}, {}}},", mapIdEnumName(mapInfoByFileName(mapStats, fileName)), i);
+        fmt::print("    {{MAP_{}, {}}},\n", mapIdEnumName(mapInfoByFileName(mapStats, fileName)), i);
     }
 
     return 0;

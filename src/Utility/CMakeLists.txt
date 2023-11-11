@@ -56,9 +56,11 @@ add_library(utility STATIC ${UTILITY_SOURCES} ${UTILITY_HEADERS})
 target_check_style(utility)
 target_link_libraries(utility
         PUBLIC
-        fmt::fmt
+        ${FMT_LDFLAGS}
         PRIVATE
         mio::mio)
+
+target_include_directories(utility PUBLIC ${FMT_INCLUDE_DIRS})
 
 if(OE_BUILD_TESTS)
     set(TEST_UTILITY_SOURCES

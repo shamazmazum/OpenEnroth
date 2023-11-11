@@ -85,5 +85,6 @@ macro(resolve_dependencies) # Intentionally a macro - we want set() to work in p
         find_package(SDL2 REQUIRED)
         find_package(PkgConfig REQUIRED)
         pkg_check_modules(LuaJit REQUIRED luajit)
+        pkg_check_modules(FMT REQUIRED fmt)
     endif()
 endmacro()
