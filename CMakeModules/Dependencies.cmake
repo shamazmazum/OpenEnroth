@@ -88,5 +88,6 @@ macro(resolve_dependencies) # Intentionally a macro - we want set() to work in p
         pkg_check_modules(FMT REQUIRED fmt)
         pkg_check_modules(GLM REQUIRED glm)
         pkg_check_modules(NLOHMANN_JSON REQUIRED nlohmann_json)
+        pkg_check_modules(SPDLOG REQUIRED spdlog)
     endif()
 endmacro()

@@ -21,12 +21,6 @@ add_library(mini INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/mini/src/mini/ini.h)
 add_library(mini::mini ALIAS mini)
 target_include_directories(mini INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/mini/src)
 
-# spdlog
-set(SPDLOG_FMT_EXTERNAL ON)
-set(SPDLOG_DISABLE_DEFAULT_LOGGER ON)
-set(SPDLOG_WCHAR_SUPPORT ON) # Use unicode APIs on Windows.
-add_subdirectory(spdlog)
-
 # SDL
 if(SDL2_FOUND)
     set(SDL_SHARED ON)
