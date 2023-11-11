@@ -40,6 +40,6 @@ void dumpAligned(FILE *file, std::string_view prefix, const std::vector<std::arr
         }
         while (output.ends_with(' ')) // Note that we don't trim front.
             output.pop_back();
-        fmt::println(file, "{}", output);
+        fmt::print(file, "{}\n", output);
     }
 }

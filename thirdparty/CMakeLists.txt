@@ -13,13 +13,6 @@ add_subdirectory(nlohmann_json)
 add_subdirectory(mio)
 add_subdirectory(imgui)
 
-# fmt
-add_subdirectory(fmt)
-target_compile_definitions(fmt INTERFACE FMT_USE_NONTYPE_TEMPLATE_ARGS) # Enable _cf literals.
-if(OE_BUILD_COMPILER STREQUAL "msvc")
-    target_compile_definitions(fmt INTERFACE FMT_CONSTEVAL=) # MSVC chokes on fmt consteval formatting, so we define FMT_CONSTEVAL=<empty>.
-endif()
-
 # glad
 add_subdirectory(glad)
 target_include_directories(glad INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/glad/include)
