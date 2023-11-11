@@ -81,5 +81,7 @@ macro(resolve_dependencies) # Intentionally a macro - we want set() to work in p
         find_package(FFmpeg REQUIRED)
         find_package(OpenGL REQUIRED)
         find_package(ZLIB REQUIRED)
+        find_package(OpenAL REQUIRED)
+        find_package(SDL2 REQUIRED)
     endif()
 endmacro()

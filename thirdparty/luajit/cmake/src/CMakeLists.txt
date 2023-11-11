@@ -550,7 +550,7 @@ if (APPLE AND LJ_64 AND LUAJIT_DISABLE_GC64)
   target_link_libraries(luajit "-pagezero_size 10000" "-image_base 100000000")
 endif()
 if ("${CMAKE_SYSTEM_NAME}" MATCHES "(Open|Free|Net)BSD")
-  target_link_libraries(luajit c++abi pthread)
+  target_link_libraries(luajit c++abi)
 endif()
 target_compile_definitions(luajit PRIVATE ${LJ_DEFINITIONS})
 
