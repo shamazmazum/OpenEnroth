@@ -92,9 +92,11 @@ target_link_libraries(engine_graphics
         library_image
         glm::glm
         PRIVATE
-        libluajit
+        ${LuaJit_LDFLAGS}
         glad
         nuklear)
+
+target_include_directories(engine_graphics PRIVATE ${LuaJit_INCLUDE_DIRS})
 
 if (NOT BUILD_PLATFORM STREQUAL "android")
     find_package(OpenGL REQUIRED)
