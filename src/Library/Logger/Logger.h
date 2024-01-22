@@ -46,7 +46,12 @@ class Logger {
     template<class... Args>
     void log(const LogCategory &category, LogLevel level, fmt::format_string<Args...> fmt, Args &&... args) {
         if (shouldLog(category, level))
-            logV(category, level, fmt, fmt::make_format_args(args...));
+            logV(category, level, fmt, std::forward<Args>(args)...);
+    }
+
+    template<class... Args>
+    void logV(const LogCategory &category, LogLevel level, fmt::string_view fmt, Args&&... args) {
+        writeToSink(category, level, fmt::format(fmt::runtime(fmt), args...));
     }
 
     template<class... Args>
@@ -134,7 +139,7 @@ class Logger {
     void setSink(LogSink *sink);
 
  private:
-    void logV(const LogCategory &category, LogLevel level, fmt::string_view fmt, fmt::format_args args);
+    void writeToSink(const LogCategory &category, LogLevel level, std::string output);
 
  private:
     std::mutex _mutex;
