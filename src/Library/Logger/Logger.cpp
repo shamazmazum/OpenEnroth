@@ -22,8 +22,8 @@ Logger::~Logger() {
     logger = nullptr;
 }
 
-void Logger::logV(const LogCategory &category, LogLevel level, fmt::string_view fmt, fmt::format_args args) {
-    _sink->write(category, level, fmt::vformat(fmt, args));
+void Logger::writeToSink(const LogCategory &category, LogLevel level, std::string output) {
+    _sink->write(category, level, output);
 }
 
 LogLevel Logger::level() const {
