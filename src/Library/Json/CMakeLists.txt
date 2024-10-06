@@ -11,19 +11,26 @@ set(LIBRARY_JSON_HEADERS
 add_library(library_json STATIC ${LIBRARY_JSON_SOURCES} ${LIBRARY_JSON_HEADERS})
 target_check_style(library_json)
 target_link_libraries(library_json
-        PUBLIC
-        utility
-        library_serialization
-        nlohmann_json)
+  PUBLIC
+  utility
+  library_serialization
+)
 
+target_include_directories(library_json PRIVATE
+  ${NLOHMANN_JSON_INCLUDE_DIRS}
+)
 
 if(OE_BUILD_TESTS)
-    set(TEST_LIBARY_JSON_SOURCES Tests/Json_ut.cpp)
+  set(TEST_LIBARY_JSON_SOURCES Tests/Json_ut.cpp)
 
-    add_library(test_library_json OBJECT ${TEST_LIBARY_JSON_SOURCES})
-    target_link_libraries(test_library_json PUBLIC testing_unit library_json)
+  add_library(test_library_json OBJECT ${TEST_LIBARY_JSON_SOURCES})
+  target_link_libraries(test_library_json PUBLIC testing_unit library_json)
 
-    target_check_style(test_library_json)
+  target_check_style(test_library_json)
 
-    target_link_libraries(OpenEnroth_UnitTest PUBLIC test_library_json)
+  target_link_libraries(OpenEnroth_UnitTest PUBLIC test_library_json)
+
+  target_include_directories(test_library_json PRIVATE
+    ${NLOHMANN_JSON_INCLUDE_DIRS}
+  )
 endif()
