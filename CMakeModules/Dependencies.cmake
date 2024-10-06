@@ -102,6 +102,7 @@ macro(resolve_dependencies) # Intentionally a macro - we want set() to work in p
         find_package(PkgConfig REQUIRED)
         find_package(GLM REQUIRED)
         find_package(FastFloat CONFIG REQUIRED)
+        find_package(CLI11 CONFIG REQUIRED)
         pkg_check_modules(LuaJit REQUIRED luajit)
         pkg_check_modules(NLOHMANN_JSON REQUIRED nlohmann_json)
         pkg_check_modules(SOL2 REQUIRED sol2)
