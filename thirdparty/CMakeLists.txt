@@ -25,12 +25,6 @@ add_library(inicpp::inicpp ALIAS inicpp)
 # small_vector
 add_subdirectory(small_vector)
 
-# spdlog
-set(SPDLOG_FMT_EXTERNAL ON)
-set(SPDLOG_DISABLE_DEFAULT_LOGGER ON)
-set(SPDLOG_WCHAR_SUPPORT ON) # Use unicode APIs on Windows.
-add_subdirectory(spdlog)
-
 # googletest
 if(OE_BUILD_TESTS)
     set(INSTALL_GTEST OFF)
