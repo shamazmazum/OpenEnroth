@@ -18,7 +18,6 @@ target_link_libraries(engine_graphics_level
   library_serialization
   library_color
   library_image
-  glm::glm
   OpenGL::GL
   engine_graphics
   PRIVATE
@@ -28,4 +27,5 @@ target_link_libraries(engine_graphics_level
 
 target_include_directories(engine_graphics_level PRIVATE
   ${LuaJit_INCLUDE_DIRS}
+  ${GLM_INCLUDE_DIR}
 )

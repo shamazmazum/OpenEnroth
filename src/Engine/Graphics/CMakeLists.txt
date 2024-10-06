@@ -72,7 +72,6 @@ target_link_libraries(engine_graphics
   library_serialization
   library_color
   library_image
-  glm::glm
   OpenGL::GL
   ${LuaJit_LDFLAGS}
   ${SOL2_LDFLAGS}
@@ -83,4 +82,5 @@ target_link_libraries(engine_graphics
 target_include_directories(engine_graphics PRIVATE
   ${LuaJit_INCLUDE_DIRS}
   ${SOL2_INCLUDE_DIRS}
+  ${GLM_INCLUDE_DIR}
 )

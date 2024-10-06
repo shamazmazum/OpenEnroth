@@ -25,15 +25,19 @@ add_library(engine_graphics_renderer STATIC ${ENGINE_GRAPHICS_RENDERER_SOURCES} 
 target_check_style(engine_graphics_renderer)
 
 target_link_libraries(engine_graphics_renderer
-        PUBLIC
-        engine
-        engine_graphics
-        utility
-        library_serialization
-        library_color
-        library_image
-        glm::glm
-        OpenGL::GL
-        engine_graphics
-        PRIVATE
-        glad)
+  PUBLIC
+  engine
+  engine_graphics
+  utility
+  library_serialization
+  library_color
+  library_image
+  OpenGL::GL
+  engine_graphics
+  PRIVATE
+  glad
+)
+
+target_include_directories(engine_graphics_renderer PRIVATE
+  ${GLM_INCLUDE_DIR}
+)
