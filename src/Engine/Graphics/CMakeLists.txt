@@ -65,16 +65,19 @@ add_library(engine_graphics STATIC ${ENGINE_GRAPHICS_SOURCES} ${ENGINE_GRAPHICS_
 target_check_style(engine_graphics)
 
 target_link_libraries(engine_graphics
-        PUBLIC
-        engine
-        engine_graphics_renderer
-        utility
-        library_serialization
-        library_color
-        library_image
-        glm::glm
-        OpenGL::GL
-        libluajit
-        sol2
-        PRIVATE
-        glad)
+  PUBLIC
+  engine
+  engine_graphics_renderer
+  utility
+  library_serialization
+  library_color
+  library_image
+  glm::glm
+  OpenGL::GL
+  ${LuaJit_LDFLAGS}
+  sol2
+  PRIVATE
+  glad
+)
+
+target_include_directories(engine_graphics PRIVATE ${LuaJit_INCLUDE_DIRS})
