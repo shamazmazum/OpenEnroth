@@ -7,7 +7,6 @@ set(BUILD_TESTING OFF CACHE BOOL "Don't build tests for subprojects. Value is fo
 set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
 
 add_subdirectory(cmrc)
-add_subdirectory(fast_float)
 add_subdirectory(magic_enum)
 add_subdirectory(cli11)
 add_subdirectory(nlohmann_json)
