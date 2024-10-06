@@ -13,7 +13,6 @@ add_subdirectory(magic_enum)
 add_subdirectory(cli11)
 add_subdirectory(nlohmann_json)
 add_subdirectory(mio)
-add_subdirectory(sol2)
 add_subdirectory(imgui)
 
 # fmt

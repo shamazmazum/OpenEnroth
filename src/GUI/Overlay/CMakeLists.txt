@@ -24,3 +24,8 @@ target_link_libraries(gui_overlay
     imgui
     scripting
 )
+
+target_include_directories(gui_overlay PRIVATE
+  ${LuaJit_INCLUDE_DIRS}
+  ${SOL2_INCLUDE_DIRS}
+)

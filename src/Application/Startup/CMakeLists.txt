@@ -31,3 +31,7 @@ target_link_libraries(application_startup
         scripting
         utility)
 
+target_include_directories(application_startup PRIVATE
+  ${LuaJit_INCLUDE_DIRS}
+  ${SOL2_INCLUDE_DIRS}
+)

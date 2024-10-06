@@ -33,10 +33,16 @@ add_library(scripting STATIC ${SCRIPTING_SOURCES} ${SCRIPTING_HEADERS})
 target_check_style(scripting)
 
 target_link_libraries(scripting
-        PUBLIC
-        engine
-        library_logger
-        PRIVATE
-        libluajit
-        sol2
-        gui_overlay)
+  PUBLIC
+  engine
+  library_logger
+  PRIVATE
+  ${LuaJit_LDFLAGS}
+  ${SOL2_LDFLAGS}
+  gui_overlay
+)
+
+target_include_directories(scripting PRIVATE
+  ${LuaJit_INCLUDE_DIRS}
+  ${SOL2_INCLUDE_DIRS}
+)

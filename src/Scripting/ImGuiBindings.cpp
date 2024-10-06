@@ -86,7 +86,8 @@ struct ImGuiInputTextUserData {
             break;
         }
 
-        *string = callback->call(data->EventFlag, step);
+        const std::string tmp = callback->call(data->EventFlag, step);
+        *string = tmp;
         data->DeleteChars(0, data->BufTextLen);
         data->InsertChars(0, string->data());
     }

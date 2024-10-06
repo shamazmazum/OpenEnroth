@@ -75,9 +75,12 @@ target_link_libraries(engine_graphics
   glm::glm
   OpenGL::GL
   ${LuaJit_LDFLAGS}
-  sol2
+  ${SOL2_LDFLAGS}
   PRIVATE
   glad
 )
 
-target_include_directories(engine_graphics PRIVATE ${LuaJit_INCLUDE_DIRS})
+target_include_directories(engine_graphics PRIVATE
+  ${LuaJit_INCLUDE_DIRS}
+  ${SOL2_INCLUDE_DIRS}
+)

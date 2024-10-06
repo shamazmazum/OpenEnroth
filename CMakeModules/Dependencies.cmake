@@ -101,6 +101,7 @@ macro(resolve_dependencies) # Intentionally a macro - we want set() to work in p
         find_package(FFmpeg REQUIRED)
         find_package(PkgConfig REQUIRED)
         pkg_check_modules(LuaJit REQUIRED luajit)
+        pkg_check_modules(SOL2 REQUIRED sol2)
 
         find_package(SDL2 CONFIG REQUIRED)
         add_library(SDL2OE INTERFACE)
